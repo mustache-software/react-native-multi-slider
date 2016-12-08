@@ -9,7 +9,8 @@ var {
   StyleSheet,
   PanResponder,
   View,
-  TouchableHighlight
+  TouchableHighlight,
+  Platform
 } = ReactNative;
 
 var converter = require('./converter.js');
@@ -278,7 +279,8 @@ var styles = StyleSheet.create({
     flexDirection: 'row',
   },
   track: {
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginTop: Platform.select({ios: 0, android: 4})
   },
   touch: {
     justifyContent: 'center',
