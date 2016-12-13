@@ -280,7 +280,7 @@ var styles = StyleSheet.create({
   },
   track: {
     justifyContent: 'center',
-    marginTop: Platform.select({ios: 0, android: 4})
+    marginTop: 4
   },
   touch: {
     justifyContent: 'center',
