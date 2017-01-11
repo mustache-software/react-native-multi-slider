@@ -138,6 +138,12 @@ var Slider = React.createClass({
     var value      = converter.positionToValue(this.state.positionOne, this.optionsArray, this.props.sliderLength);
 
     var slipDisplacement = this.props.touchDimensions.slipDisplacement;
+    
+    // Prevent markers overlapping
+    if (confined > this.state.positionOne &&
+          Math.abs(this.state.positionTwo - confined) < (this.props.markerStyle.width / 2 || 20)) {
+      return ;
+    }
 
     if (Math.abs(gestureState.dy) < slipDisplacement || !slipDisplacement) {
       this.setState({
